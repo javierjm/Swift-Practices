@@ -1,0 +1,85 @@
+Debugging Techniques 
+
+Simulator
+
+Debug > Color Blended Layers  
+Check options from Debug Tab 
+
+<h2>Instruments</h2> -> Puedo hacer Blended Layers tambien 
+<h2>Capture View Debuggin</h2> -> Conocido
+
+If get an error disable BitCode, go to Build Settings and Enable Bitcode to NO - RESEARCH
+
+<h2>Reveal</h2>
+
+other option for Reveal: Flex <a href="https://github.com/Flipboard/FLEX">FlEX</a> , this is a frameword added to Xcode and we got a toolbar when running simulator, another cool thing is you get access for file system, so you can select core data files, etc 
+
+<h2>FLow </h2>
+
+XCPlayground -> Helper in playground for displaying views, views can be seen in Timeline Tab 
+
+LLDB Usefull commands 
+
+Watchpoints 
+
+expr @import UIKit -> to avoid casting and use: 
+
+po self.view.frame -> pichudisimo 
+
+if I add a breakpoint and set the action to: 
+
+expr variable = value // this will change variable in runtime 
+
+I can even add conditions in breakpoints 
+
+
+
+
+<h1>Core Animations</h1>
+
+With UiKit you can't animate Layers, but with Easy Animations you can :) 
+
+uiview.insertSubview -> Allows me to insert view anywhere, not in the top: 
+// insertSubview(img, aboveSubview: imgBackground)
+
+If constraints have changed, you can animate it like this: 
+
+        UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.0, options: nil, animations: {
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+
+
+        since layoutIfNeeded is animated by defualt, the code executed during the duration of the animation will be animated 
+
+
+#August 17th 
+<h1>Custom Animations</h1>
+
+github.com/gdavis/SwfitCustomTransitions
+
+<h1>Localization (Internationalization) Explained</h1> 
+
+Twine -> Ruby Gem for localization 
+Don't forget to localize Accesibility Strings 
+
+For Localization, some suggestions are formmaters: 
+
+NSLenghtFormatterUnit
+NSMassFormatterUnit
+NSEnergyFormatterUnit
+
+https://github.com/designatednerd/localizationExplained
+
+<h1>WatchKit Notifications</h1>
+
+ matthewmorey.com 
+ @xzolian
+
+ When creating dynamic notifications -> watch kit will try to load the static if takes too much time 
+
+<h1>Safer Swifth Value Type</h1>
+
+Flux Architecture 
+
+
+Project and Slides: http://bit.ly/swift-values
